@@ -1,0 +1,57 @@
+h2, h1, a:hover {
+    color: #5C0000;
+}
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: #E0A684;
+    text-align: justify;
+}
+
+a {
+    color: inherit;
+}
+
+#websitetitle {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 130%;
+    padding-bottom: -10px !important;
+    color: #E0A684;
+    position: relative;
+    top: 0.2em;
+}
+
+#hovernavitem{
+    border-bottom: 3px solid #1E1010 
+}
+#hovernavitem:hover{
+    border-bottom: 3px solid #E0A684
+}
+
+
+.hintergrund-dark {
+    background-color:#1E1010;
+}
+
+.dashedborder {
+    background-color: #E0A684;
+    border: 2px dashed #1E1010;
+    font-style: italic;
+    border-radius: 0.25rem;
+}
+.upborder{
+    background-color: #E0A684;
+    border-top: 2px solid #1E1010;
+}
+
+/* Akkordion */
+.accordion-item .accordion-button {
+    background-color: inherit;
+    color: inherit 
+}                
+.accordion-button:focus {
+    box-shadow: inherit;
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%235C0000'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
