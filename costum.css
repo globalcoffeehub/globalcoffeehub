@@ -1,6 +1,9 @@
-h2, h1, a:hover {
+h2,
+h1,
+a:hover {
     color: #5C0000;
 }
+
 body {
     font-family: 'Noto Sans TC', sans-serif;
     background-color: #E0A684;
@@ -13,23 +16,24 @@ a {
 
 #websitetitle {
     font-family: 'Lexend Deca', sans-serif;
-    font-size: 130%;
+    font-size: 125%;
     padding-bottom: -10px !important;
     color: #E0A684;
     position: relative;
     top: 0.2em;
 }
 
-#hovernavitem{
-    border-bottom: 3px solid #1E1010 
+#hovernavitem {
+    border-bottom: 3px solid #1E1010
 }
-#hovernavitem:hover{
+
+#hovernavitem:hover {
     border-bottom: 3px solid #E0A684
 }
 
 
 .hintergrund-dark {
-    background-color:#1E1010;
+    background-color: #1E1010;
 }
 
 .dashedborder {
@@ -38,7 +42,8 @@ a {
     font-style: italic;
     border-radius: 0.25rem;
 }
-.upborder{
+
+.upborder {
     background-color: #E0A684;
     border-top: 2px solid #1E1010;
 }
@@ -46,8 +51,9 @@ a {
 /* Akkordion */
 .accordion-item .accordion-button {
     background-color: inherit;
-    color: inherit 
-}                
+    color: inherit
+}
+
 .accordion-button:focus {
     box-shadow: inherit;
 }
@@ -57,4 +63,8 @@ a {
 }
 
 /* Map ID */
-#mapid { height: 420px; }
+#mapid {
+    height: 420px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
