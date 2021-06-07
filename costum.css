@@ -16,10 +16,17 @@ a {
 
 #websitetitle {
     font-family: 'Lexend Deca', sans-serif;
-    font-size: 1.2em;
+    font-size:1.2em;
     color: #E0A684;
     position: relative;
     top: 0.2em;
+    display: inline-block;
+}
+
+@media screen and (max-width: 365px) {
+    #websitetitle {
+        font-size:1em;
+    }
 }
 
 #hovernavitem {
