@@ -1,15 +1,8 @@
-/*var mymap = L.map('mapid').setView([47.0, 14.0], 7);
-
-L.tileLayer.provider('Stamen.Watercolor', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> Mitwirkende',
-   
-}).addTo(mymap); */
-
-
+// Basemaps mit Variablen initialisieren
 let basemapEsri = L.tileLayer.provider('Esri.WorldImagery')
-let basemapCartoDB= L.tileLayer.provider('CartoDB.Positron')
+let basemapCartoDB = L.tileLayer.provider('CartoDB.Positron')
 
-
+// Karte darstellen
 let map = L.map("mapid", {
     center: [0, 15],
     zoom: 2,
@@ -20,8 +13,19 @@ let map = L.map("mapid", {
 });
 
 
-
+// Layer Control
 let layerControl = L.control.layers({
     "Satellitenbild": basemapEsri,
     "Karte": basemapCartoDB,
+}).addTo(map);
+
+// GeoJSON zu Karte hinzufügen, GeoJSON Variable in coffe_countries.js
+let myStyle = { // GeoJSON Stylen
+    "color": "red",
+    "weight": 2,
+    "opacity": 0.5
+};
+
+let countriesLayer = L.geoJSON(coffeeProducerCountries, {
+    style: myStyle
 }).addTo(map);
