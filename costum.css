@@ -75,3 +75,7 @@ a {
     margin-bottom: 10px;
     padding-bottom: 5px;
 }
+
+.blockquote {
+    font-size: 2em;
+}
