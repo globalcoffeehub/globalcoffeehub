@@ -27,5 +27,10 @@ let myStyle = { // GeoJSON Stylen
 };
 
 let countriesLayer = L.geoJSON(coffeeProducerCountries, {
-    style: myStyle
+    style: function(feature) {
+        // switch (feature.properties.coffe_export) {
+        //     case 20: return {color: "#ff0000"};
+        //     case 'Philippines':   return {color: "#0000ff"};
+        // }
+    }
 }).addTo(map);
