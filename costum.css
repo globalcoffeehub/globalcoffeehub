@@ -1,7 +1,12 @@
+/* Überschrift und Linkhover Farbe */
 h2,
 h1,
 a:hover {
     color: #5C0000;
+}
+
+a {
+    color: inherit;
 }
 
 body {
@@ -10,31 +15,44 @@ body {
     text-align: justify;
 }
 
-a {
-    color: inherit;
-}
-
+/* Titel und Logo in Navbar */
 #websitetitle {
     font-family: 'Lexend Deca', sans-serif;
-    font-size:1.2em;
+    font-size: 1.2em;
     color: #E0A684;
     position: relative;
     top: 0.2em;
     display: inline-block;
 }
 
+#logocontainer {
+    width: 50px;
+    display: inline-block
+}
+
 @media screen and (max-width: 388px) {
     #websitetitle {
-        font-size:0.9em;
+        font-size: 0.9em;
+    }
+    
+    #logocontainer {
+        width: 42px;
+        display: inline-block
     }
 }
 
 @media screen and (max-width: 350px) {
     #websitetitle {
-        font-size:0.70em;
+        font-size: 0.70em;
+    }
+
+    #logocontainer {
+        width: 35px;
+        display: inline-block
     }
 }
 
+/* Hovereffect Navbar */
 #hovernavitem {
     border-bottom: 3px solid #1E1010
 }
@@ -42,15 +60,17 @@ a {
 #hovernavitem:hover {
     border-bottom: 3px solid #E0A684
 }
+
 #activehover {
     border-bottom: 3px solid #E0A684
 }
 
-
-.hintergrund-dark {
+/* Navbar Hintergrund */
+.navbackgrounddark {
     background-color: #1E1010;
 }
 
+/* Akkordion */
 .dashedborder {
     background-color: #E0A684;
     border: 2px dashed #1E1010;
@@ -63,7 +83,7 @@ a {
     border-top: 2px solid #1E1010;
 }
 
-/* Akkordion */
+
 .accordion-item .accordion-button {
     background-color: inherit;
     color: inherit
@@ -84,6 +104,7 @@ a {
     margin-bottom: 10px;
     padding-bottom: 5px;
 }
+
 #mapproductionperson {
     height: 420px;
     margin-top: 5px;
@@ -99,11 +120,13 @@ a {
 
 .infobox {
     padding: 6px 8px;
-    font-family: 'Lexend Deca', sans-serif;;
-    background: rgba(255,255,255,0.9);
-    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    font-family: 'Lexend Deca', sans-serif;
+    ;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     border-radius: 5px;
 }
+
 .infobox h5 {
     margin: 0 0 5px;
 }

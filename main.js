@@ -143,7 +143,7 @@ function productionStylePop(feature) {
         color: 'grey',
         dashArray: '1',
         fillOpacity: 0.7,
-        attribution: "Coffee Data: <a href=\"https://ourworldindata.org/grapher/coffee-bean-production\">Our world in Data/ UN FAO</a>"
+        attribution: "Data: <a href=\"https://ourworldindata.org/grapher/coffee-bean-production\">Our world in Data/FAO</a>"
     };
 };
 
