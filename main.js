@@ -1,6 +1,7 @@
 // Basemaps mit Variablen initialisieren
-let basemapEsri = L.tileLayer.provider('Esri.WorldImagery');
-let basemapCartoDB = L.tileLayer.provider('CartoDB.Positron');
+ let basemapCartoDB = L.tileLayer.provider('CartoDB.Voyager');
+ let basemapEsri = L.tileLayer.grayscale('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+})
 
 // Karte darstellen
 let map = L.map("mapid", {
@@ -11,6 +12,7 @@ let map = L.map("mapid", {
     ],
     maxZoom: 6,
     minZoom: 2,
+    fadeAnimation: false 
 });
 
 
@@ -86,14 +88,14 @@ selectedElement = L.geoJson(coffeeProducerCountries, {
 // Wert anzeigen bei Hover
 let info = L.control(); 
 
-info.onAdd = function (map) {
+info.onAdd = function (mapid) {
     this._div = L.DomUtil.create('div', 'infobox'); // create a div with a class "info"
     this.update();
     return this._div;
 };
 
-// method that we will use to update the control based on feature properties passed
-info.update = function (feature) {
+
+info.update = function (feature) {// method that we will use to update the control based on feature properties passed
     this._div.innerHTML = '<h5>Kaffeeproduktion 2018</h5>' +  (feature ? // Conditional ob Hover
         '<b>' + feature.formal_de + '</b><br />' + feature.coffe_production + ' Tonnen'
         : 'Bewege die Maus über ein Land');
