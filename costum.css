@@ -79,3 +79,16 @@ a {
 .blockquote {
     font-size: 2em !important;
 }
+
+/* Infobox Kaffeeproduktion */
+
+.infobox {
+    padding: 6px 8px;
+    font-family: 'Lexend Deca', sans-serif;;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    border-radius: 5px;
+}
+.info h5 {
+    margin: 0 0 5px;
+}

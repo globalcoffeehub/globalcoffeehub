@@ -4,7 +4,7 @@ let basemapCartoDB = L.tileLayer.provider('CartoDB.Positron');
 
 // Karte darstellen
 let map = L.map("mapid", {
-    center: [0, 15],
+    center: [12, 15],
     zoom: 2,
     layers: [
         basemapCartoDB
@@ -41,22 +41,22 @@ function productionStyle(feature) {
         opacity: 1,
         color: 'grey',
         dashArray: '1',
-        fillOpacity: 0.7
+        fillOpacity: 0.7,
+        attribution: "Coffee Data: <a href=\"https://ourworldindata.org/grapher/coffee-bean-production\">Our world in Data/ UN FAO</a>"
     };
 };
 
 // Hovereffekt
 let selectedElement;
-let info = L.control();
 
 function highlightFeature(e) {
     let layer = e.target; //gehovertes Element
 
     layer.setStyle({
-        weight: 2,
+        weight: 1,
         color: 'black',
-        dashArray: '2',
-        fillOpacity: 0.7
+        dashArray: '1',
+        fillOpacity: 1
     });
 
     if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
@@ -84,17 +84,18 @@ selectedElement = L.geoJson(coffeeProducerCountries, {
 }).addTo(map);
 
 // Wert anzeigen bei Hover
+let info = L.control(); 
 
 info.onAdd = function (map) {
-    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+    this._div = L.DomUtil.create('div', 'infobox'); // create a div with a class "info"
     this.update();
     return this._div;
 };
 
 // method that we will use to update the control based on feature properties passed
 info.update = function (feature) {
-    this._div.innerHTML = '<h4>Kaffeeproduktion 2018 in Tonnen</h4>' +  (feature ? // Conditional ob Hover
-        '<b>' + feature.formal_de + '</b><br />' + feature.coffe_production + 't'
+    this._div.innerHTML = '<h5>Kaffeeproduktion 2018</h5>' +  (feature ? // Conditional ob Hover
+        '<b>' + feature.formal_de + '</b><br />' + feature.coffe_production + ' Tonnen'
         : 'Bewege die Maus über ein Land');
 };
 
