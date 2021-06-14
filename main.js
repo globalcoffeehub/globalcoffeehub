@@ -1,4 +1,3 @@
-
 // Basemaps mit Variablen initialisieren
  let basemapCartoDB = L.tileLayer.provider('CartoDB.Voyager');
  let basemapEsri = L.tileLayer.grayscale('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
@@ -16,13 +15,13 @@ let map = L.map("mapid", {
     fadeAnimation: false 
 });
 
-// Layer Control
+// Layer Control mit iconLayer Plugin
 let iconLayersControl = new L.Control.IconLayers(
     [
         {
-            title: 'Karte', // use any string
-            layer: basemapCartoDB, // any ILayer
-            icon: 'srcbasemap/cartodb_positron.png' // 80x80 icon
+            title: 'Karte', 
+            layer: basemapCartoDB,
+            icon: 'srcbasemap/cartodb_positron.png' 
         },
         {
             title: 'Satellit',
@@ -34,15 +33,6 @@ let iconLayersControl = new L.Control.IconLayers(
         maxLayersInRow: 1
     }
 ).addTo(map);
-
-
-// let layerControl = L.control.iconLayers({
-//     "Satellitenbild": basemapEsri,
-//     "Karte": basemapCartoDB,
-// }, {}, {
-//     "collapsed": true,
-//     "position": "topleft"
-// }).addTo(map);
 
 ///// GEOJSON ZU KARTE HINZUFÜGEN (GeoJSON Variable befindet sich in coffe_countries.js)/////
 // Choropletenfarbe bestimmen
@@ -112,7 +102,6 @@ info.onAdd = function (mapid) {
     this.update();
     return this._div;
 };
-
 
 info.update = function (feature) {// method that we will use to update the control based on feature properties passed
     this._div.innerHTML = '<h5>Kaffeeproduktion 2018</h5>' +  (feature ? // Conditional ob Hover
