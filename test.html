@@ -1,44 +1,62 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Leaflet GeoJSON Example</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css" />
-    <style type="text/css">
-        .leaflet-container{background-color:#c5e8ff;}
-    </style>
-       <!-- Leaflet CSS -->
-       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-       integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-       crossorigin=""/>
-       <!-- Leaflet JS -->
-       <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-       integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-       crossorigin=""></script>
-</head>
+    <head lang="en">
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1;" />
+        <title>Leaflet Basemaps Control</title>
+           <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+    crossorigin=""/>
 
-<body>
-    <div id="map" style="width: 600px; height: 400px"></div>
+        <link rel="stylesheet" href="ControlBasemaps/L.Control.Basemaps.css" />
+    </head>
+    <body>
+            <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+        <script src="ControlBasemaps/L.Control.Basemaps-min.js"></script>
+        <div id="map" style="position: absolute; top: 0; left:0; bottom:0; right: 0;"></div>
 
-    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
-    <script src="https://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>
-    <script>
-        var myGeoJSONPath = '/coffeecountries.json';
-        var myCustomStyle = {
-            stroke: false,
-            fill: true,
-            fillColor: '#fff',
-            fillOpacity: 1
-        }
-        $.getJSON(myGeoJSONPath,function(data){
-            var map = L.map('map').setView([39.74739, -105], 4);
+        <script>
+            var map = L.map("map").setView([44.07, -118.78], 5);
 
-            L.geoJson(data, {
-                clickable: false,
-                style: myCustomStyle
-            }).addTo(map);
-        })
-    </script>
-</body>
+            var basemaps = [
+                L.tileLayer("//stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}.png", {
+                    attribution:
+                        'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+                    subdomains: "abcd",
+                    maxZoom: 20,
+                    minZoom: 0,
+                    label: "Toner Lite"
+                }),
+                L.tileLayer("//stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.png", {
+                    attribution:
+                        'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+                    subdomains: "abcd",
+                    maxZoom: 20,
+                    minZoom: 0,
+                    label: "Toner"
+                }),
+                L.tileLayer("//stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.png", {
+                    attribution:
+                        'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+                    subdomains: "abcd",
+                    maxZoom: 16,
+                    minZoom: 1,
+                    label: "Watercolor"
+                })
+            ];
+
+            map.addControl(
+                L.control.basemaps({
+                    basemaps: basemaps,
+                    tileX: 0,
+                    tileY: 0,
+                    tileZ: 1
+                })
+            );
+        </script>
+    </body>
 </html>

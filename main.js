@@ -1,3 +1,4 @@
+
 // Basemaps mit Variablen initialisieren
  let basemapCartoDB = L.tileLayer.provider('CartoDB.Voyager');
  let basemapEsri = L.tileLayer.grayscale('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
@@ -15,15 +16,33 @@ let map = L.map("mapid", {
     fadeAnimation: false 
 });
 
-
 // Layer Control
-let layerControl = L.control.layers({
-    "Satellitenbild": basemapEsri,
-    "Karte": basemapCartoDB,
-}, {}, {
-    "collapsed": true,
-    "position": "topleft"
-}).addTo(map);
+let iconLayersControl = new L.Control.IconLayers(
+    [
+        {
+            title: 'Karte', // use any string
+            layer: basemapCartoDB, // any ILayer
+            icon: 'srcbasemap/cartodb_positron.png' // 80x80 icon
+        },
+        {
+            title: 'Satellit',
+            layer: basemapEsri,
+            icon: 'srcbasemap/here_satelliteday.png'
+        }
+    ], {
+        position: 'bottomleft',
+        maxLayersInRow: 1
+    }
+).addTo(map);
+
+
+// let layerControl = L.control.iconLayers({
+//     "Satellitenbild": basemapEsri,
+//     "Karte": basemapCartoDB,
+// }, {}, {
+//     "collapsed": true,
+//     "position": "topleft"
+// }).addTo(map);
 
 ///// GEOJSON ZU KARTE HINZUFÜGEN (GeoJSON Variable befindet sich in coffe_countries.js)/////
 // Choropletenfarbe bestimmen
