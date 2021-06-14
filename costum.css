@@ -30,7 +30,7 @@ body {
     display: inline-block
 }
 
-@media screen and (max-width: 388px) {
+@media screen and (max-width: 385px) {
     #websitetitle {
         font-size: 0.9em;
     }
@@ -43,11 +43,11 @@ body {
 
 @media screen and (max-width: 350px) {
     #websitetitle {
-        font-size: 0.70em;
+        font-size: 0.66em;
     }
 
     #logocontainer {
-        width: 35px;
+        width: 30px;
         display: inline-block
     }
 }
