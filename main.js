@@ -59,7 +59,7 @@ function productionStyle(feature) {
         color: 'grey',
         dashArray: '1',
         fillOpacity: 0.7,
-        attribution: "Coffee Data: <a href=\"https://ourworldindata.org/grapher/coffee-bean-production\">Our world in Data/ UN FAO</a>"
+        attribution: "Data: <a href=\"https://ourworldindata.org/grapher/coffee-bean-production\">Our world in Data/FAO</a>"
     };
 };
 
@@ -195,7 +195,7 @@ infoPop.onAdd = function () {
 };
 
 infoPop.update = function (feature) {// method that we will use to update the control based on feature properties passed
-    this._div.innerHTML = '<h5>Kaffeeproduktion 2018 pro EW</h5>' +  (feature ? // Conditional ob Hover
+    this._div.innerHTML = '<h5>Kaffeeproduktion 2018 <br>pro EW</h5>' +  (feature ? // Conditional ob Hover
         '<b>' + feature.formal_de + '</b><br />' + Math.round((feature.coffe_production/feature.pop_est)*10000)/10 + ' Kilo/Einwohner'
         : 'Bewege die Maus über ein Land');
 };

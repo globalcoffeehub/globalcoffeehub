@@ -23,9 +23,15 @@ a {
     display: inline-block;
 }
 
-@media screen and (max-width: 365px) {
+@media screen and (max-width: 388px) {
     #websitetitle {
         font-size:0.9em;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    #websitetitle {
+        font-size:0.8em;
     }
 }
 
@@ -34,6 +40,9 @@ a {
 }
 
 #hovernavitem:hover {
+    border-bottom: 3px solid #E0A684
+}
+#activehover {
     border-bottom: 3px solid #E0A684
 }
 
