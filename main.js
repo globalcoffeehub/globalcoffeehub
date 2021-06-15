@@ -117,7 +117,7 @@ info.update = function (feature) {// method that we will use to update the contr
         : 'Bewege die Maus über ein Land');
 };
 
-info.addTo(mapproduction);
+info.addTo( );
 
 
 // --- KARTE PRODUKTION/ KOPF ---
