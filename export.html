@@ -1,87 +1,93 @@
 <!DOCTYPE html>
 <html lang="de">
 
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Coffee Hub</title>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Coffee Hub</title>
 
-    <!-- BOOTSTRAP CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <!-- BOOTSTRAP JS -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-    </script>
+  <!-- BOOTSTRAP CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <!-- BOOTSTRAP JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+  </script>
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Noto+Sans+TC&display=swap" rel="stylesheet">
-    <!--Google Icons-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-     
-    <!-- Leaflet CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&family=Noto+Sans+TC&display=swap" rel="stylesheet">
+  <!--Google Icons-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin=""/>
-    <!-- Leaflet JS -->
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    crossorigin="" />
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
 
-    <!-- Leaflet Providers Plugin -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.12.0/leaflet-providers.min.js"
+  <!-- Leaflet Providers Plugin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-providers/1.12.0/leaflet-providers.min.js"
     integrity="sha512-LixflAm9c0/qONbz9F1Ept+QJ6QBpb7wUlPuyv1EHloTVgwSK8j3yMV3elnElGQcv7Y5QTFlF/FqyeE/N4LnKQ=="
     crossorigin="anonymous"></script>
-    <!-- Leaflet Grayscale Plugin -->
-    <script src="TileLayer.Grayscale.js"></script>
-    <!-- iconLayers Plugin -->
-    <script src="srcbasemap/iconLayers.js"></script>
-    <link href="srcbasemap/iconLayers.css" rel="stylesheet">
+  <!-- Leaflet Grayscale Plugin -->
+  <script src="TileLayer.Grayscale.js"></script>
+  <!-- iconLayers Plugin -->
+  <script src="srcbasemap/iconLayers.js"></script>
+  <link href="srcbasemap/iconLayers.css" rel="stylesheet">
 
-    <!-- Costum CSS -->
-    <link rel="stylesheet" href="costum.css">
+  <!-- Costum CSS -->
+  <link rel="stylesheet" href="costum.css">
 
-    <!-- export JS zur Darstellung der Pfeile -->
-    <script defer src="export.js"></script>
-    <!-- Arrowheads -->
-    <script src="https://cdn.jsdelivr.net/npm/leaflet-arrowheads@1.2.3/src/leaflet-arrowheads.js"></script>
-    <!-- geometry util -->
-    <script src="https://cdn.jsdelivr.net/npm/leaflet-arrowheads@1.2.3/src/leaflet-geometryutil.js"></script>
-    
-    <!-- Text Path -->
-    <script src="https://cdn.jsdelivr.net/npm/leaflet-textpath@1.2.3/leaflet.textpath.js"></script>
-  </head>
+  <!-- export JS zur Darstellung der Pfeile -->
+  <script defer src="export.js"></script>
+
+  <!-- export JS TEST -->
+  <script defer src="export.js"></script>
+  <!-- Arrowheads -->
+  <script src="https://cdn.jsdelivr.net/npm/leaflet-arrowheads@1.2.3/src/leaflet-arrowheads.js"></script>
+  <!-- geometry util -->
+  <script src="https://cdn.jsdelivr.net/npm/leaflet-arrowheads@1.2.3/src/leaflet-geometryutil.js"></script>
+
+  <!-- Text Path -->
+  <script src="https://cdn.jsdelivr.net/npm/leaflet-textpath@1.2.3/leaflet.textpath.js"></script>
+</head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbackgrounddark navbar-dark">
+  <nav class="navbar navbar-expand-md navbackgrounddark navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="https://globalcoffeehub.github.io/">
-            <div id=logocontainer><img src="images/cup-149682.svg" alt="" width="100%" ></div>
-            <span class="p-1" id="websitetitle">Global Coffee Hub</span>
-        </a>
+      <a class="navbar-brand" href="https://globalcoffeehub.github.io/">
+        <div id=logocontainer><img src="images/cup-149682.svg" alt="" width="100%"></div>
+        <span class="p-1" id="websitetitle">Global Coffee Hub</span>
+      </a>
 
-        <!-- Toggler/collapsibe Button -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        
-          <!-- Navbar top -->
-        <div class="collapse navbar-collapse justify-content-end" id="navbarToggleExternalContent">
-            <ul class="navbar-nav">
-              <li class="nav-item" id="hovernavitem">
-                <a class="nav-link" x href="/index.html">Start</a>
-              </li>
-              <li class="nav-item" id="hovernavitem">
-                <a class="nav-link" x href="/verbrauch.html">Verbrauch</a>
-              </li>
-              <li class="nav-item" id="activehover">
-                <a class="nav-link" href="/export.html">Export</a>
-              </li>
-            </ul>
-        </div>
+      <!-- Toggler/collapsibe Button -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Navbar top -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarToggleExternalContent">
+        <ul class="navbar-nav">
+          <li class="nav-item" id="hovernavitem">
+            <a class="nav-link" x href="/index.html">Start</a>
+          </li>
+          <li class="nav-item" id="hovernavitem">
+            <a class="nav-link" x href="/verbrauch.html">Verbrauch</a>
+          </li>
+          <li class="nav-item" id="activehover">
+            <a class="nav-link" href="/export.html">Export</a>
+          </li>
+        </ul>
+      </div>
     </div>
+<<<<<<< Updated upstream
     </nav>
 
     <div class="container-xl pt-5">
@@ -99,57 +105,91 @@
                 <!-- Die Map für Export Darstellungen -->
                 <div id="expomap"></div>
                 
+=======
+  </nav>
+
+  <div class="container-xl pt-5">
+    <div class="row">
+      <div class="col-xl-9 ">
+        <img src="images/beanbags.jpg" width="100%" class="mx-auto d--block">
+        <h1 class="pt-4 pb-2">Export von Rohkaffee</h1>
+        <p class="lead">
+          Brasiliens Kaffeeexport:
+        </p>
+        <p>
+          Im Jahr 2019 exportierte Brasilien Kaffee im Wert von 4,72 Mrd. $ und war damit der 1. größte Exporteur von
+          Kaffee in der Welt. Im selben Jahr war Kaffee das 11. meist exportierte Produkt in Brasilien. Die Hauptziele
+          der Kaffeeexporte aus Brasilien sind: Vereinigte Staaten ($976M), Deutschland ($792M), Italien ($474M), Japan
+          ($349M) und Belgien ($299M). <br>
+          Die am schnellsten wachsenden Exportmärkte für Kaffee aus Brasilien zwischen 2018 und 2019 waren die
+          Vereinigten Staaten ($142M), Mexiko ($43,9M) und Deutschland ($41,3M). <br>
+          Quelle: <a
+          href="https://oec.world/en/profile/bilateral-product/coffee/reporter/bra">OEC</a></p>
+        <p>
+          Die Karte stellt den Export von Kaffee aus Brasilien dar (3 Hauptabnehmer, nicht geröstet oder entkoffeiniert Exporte im Jahr 2019 in Gt) <br>
+          Quelle: <a
+            href="https://wits.worldbank.org/trade/comtrade/en/country/BRA/year/2019/tradeflow/Exports/partner/ALL/product/090111#">WITS</a>
+        </p>
+
+        <!-- Die Map für Export Darstellungen -->
+        <div id="expomap"></div>
+
+      </div>
+
+
+      <div class="col-xl-3">
+
+        <!-- Akkordion -->
+        <div class="accordion" id="accordionExample">
+          <div class="accordion-item dashedborder">
+            <h3 class="accordion-header" id="headingOne">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <strong>Welches Land ist die Wiege des Kaffees?</strong>
+              </button>
+            </h3>
+            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                Äthiopien
+              </div>
+>>>>>>> Stashed changes
             </div>
-
-
-            <div class="col-xl-3">
-
-                        <!-- Akkordion -->
-                <div class="accordion" id="accordionExample">
-                    <div class="accordion-item dashedborder">
-                      <h3 class="accordion-header" id="headingOne">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                          <strong>Welches Land ist die Wiege des Kaffees?</strong>
-                        </button>
-                      </h3>
-                      <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                          Äthiopien
-                        </div>
-                      </div>
-                    </div>
-                    <div class="accordion-item dashedborder">
-                      <h3 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        <strong> Auf welchem Kontinent wird der meiste Kaffee produziert?</strong>
-                        </button>
-                      </h3>
-                      <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                        <div class="accordion-body">
-                         Südamerika
-                        </div>
-                      </div>
-                    </div>
-                </div>
+          </div>
+          <div class="accordion-item dashedborder">
+            <h3 class="accordion-header" id="headingTwo">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                <strong> Auf welchem Kontinent wird der meiste Kaffee produziert?</strong>
+              </button>
+            </h3>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+              data-bs-parent="#accordionExample">
+              <div class="accordion-body">
+                Südamerika
+              </div>
             </div>
+          </div>
         </div>
-        
+      </div>
     </div>
 
-    <nav class="navbar navbar-expand-sm navbar-light upborder mt-5 sticky-bottom">
-        <div class="container-fluid">
-            <a href="#"><span class="material-icons md-48">arrow_upward</span></a>
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <p class="nav-link disabled" disabled>2021</p>
-              </li>
-              <li class="nav-item">
-                <p class="nav-link disabled" disabled>Benzinger Marlene, Haring Marcel, Vossbeck Karolin</p>
-              </li>
+  </div>
 
-            </ul>
-        </div>
-    </nav>
+  <nav class="navbar navbar-expand-sm navbar-light upborder mt-5 sticky-bottom">
+    <div class="container-fluid">
+      <a href="#"><span class="material-icons md-48">arrow_upward</span></a>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <p class="nav-link disabled" disabled>2021</p>
+        </li>
+        <li class="nav-item">
+          <p class="nav-link disabled" disabled>Benzinger Marlene, Haring Marcel, Vossbeck Karolin</p>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
 
 
 </body>

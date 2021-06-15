@@ -60,26 +60,79 @@ var marker = L.marker(
     [-15.749997, -47.9499962] //, [37.6, -95.665], [51.1642292, 10.4541194], [41.29246, 12.5736108]
 ).addTo(expomap);
 
-var polyline = L.polyline(latlngs, {
-        color: 'green'
+// Brazil to USA
+var usaline = L.polyline(latlngs[0], {
+        color: '#5C0000',
+        opacity: 0.8
     }).arrowheads({
-        size: '15%',
+        size: '5%',
         proportionalToTotal: true,
-        fill: true
+        fill: true,
     })
     .addTo(expomap);
 
-polyline.setText('soundsoviel', {
+// adjust Text Path 
+usaline.setText('43,98', {
     repeat: false,
-    offset: 5,
+    offset: 20,
     attributes: {
-        fill: 'green',
+        fill: '#5C0000',
         'font-weight': 'light',
-        'font-size': '10'
+        'font-size': '15',
+        'font-family': 'Noto Sans TC',
     },
     center: true,
-    orientation: perpendicular,
+    orientation: 180,
     below: true,
+});
+
+// Brazil to Germany
+var gerline = L.polyline(latlngs[1], {
+    color: '#5C0000',
+    opacity: 0.8
+}).arrowheads({
+    size: '5%',
+    proportionalToTotal: true,
+    fill: true,
+})
+.addTo(expomap);
+
+gerline.setText('38,39', {
+repeat: false,
+offset: -10,
+attributes: {
+    fill: '#5C0000',
+    'font-weight': 'light',
+    'font-size': '15',
+    'font-family': 'Noto Sans TC',
+},
+center: true,
+orientation: 0,
+});
+
+// Brazil to Italy
+var itline = L.polyline(latlngs[2], {
+    color: '#5C0000',
+    opacity: 0.8
+}).arrowheads({
+    size: '5%',
+    proportionalToTotal: true,
+    fill: true,
+})
+.addTo(expomap);
+
+itline.setText('21,64', {
+repeat: false,
+offset: 15,
+attributes: {
+    fill: '#5C0000',
+    'font-weight': 'light',
+    'font-size': '15',
+    'font-family': 'Noto Sans TC',
+},
+center: true,
+orientation: 0,
+below: true,
 });
 
 // zoom the map to the polyline
