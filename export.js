@@ -11,7 +11,7 @@ function makemap(mapid) {
     return map
 }
 
-// Funktion Layer Control mit iconLayer Plugin
+// Fuktion Layer Control mit iconLayer Plugin
 function makeLayerControl(map) {
     new L.Control.IconLayers(
         [{
@@ -57,16 +57,30 @@ var latlngs = [
 ];
 
 var marker = L.marker(
-    [-15.749997, -47.9499962]
-    //, [37.6, -95.665], [51.1642292, 10.4541194], [41.29246, 12.5736108]
+    [-15.749997, -47.9499962] //, [37.6, -95.665], [51.1642292, 10.4541194], [41.29246, 12.5736108]
 ).addTo(expomap);
 
 var polyline = L.polyline(latlngs, {
         color: 'green'
-    }).arrowheads()
+    }).arrowheads({
+        size: '15%',
+        proportionalToTotal: true,
+        fill: true
+    })
     .addTo(expomap);
+
+polyline.setText('soundsoviel', {
+    repeat: false,
+    offset: 5,
+    attributes: {
+        fill: 'green',
+        'font-weight': 'light',
+        'font-size': '10'
+    },
+    center: true,
+    orientation: perpendicular,
+    below: true,
+});
 
 // zoom the map to the polyline
 map.fitBounds(polyline.getBounds());
-
-var polyline = L.polyline([coords]).arrowheads()
