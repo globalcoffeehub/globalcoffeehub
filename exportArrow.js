@@ -39,7 +39,31 @@ function makeLayerControl(map) {
 let expomap = makemap("expomap");
 makeLayerControl(expomap);
 
-// Data for green coffee exports from Top 5 coffee countries in 2019/20, by country of destination
+// create a red polyline from an array of arrays of LatLng points
+// brazil to ...
+var latlngs = [
+    [ //usa
+        [-15.749997, -47.9499962],
+        [37.6, -95.665]
+    ],
+    [ //germany
+        [-15.749997, -47.9499962],
+        [51.1642292, 10.4541194]
+    ],
+    [ //italy
+        [-15.749997, -47.9499962],
+        [41.29246, 12.5736108]
+    ]
+];
+
+var polyline = L.polyline(latlngs, {
+    color: 'green'
+}).addTo(expomap);
+
+// zoom the map to the polyline
+map.fitBounds(polyline.getBounds());
+
+/* // Data for green coffee exports from Top 5 coffee countries in 2019/20, by country of destination
 // data from www.statista.com
 // Tested for Brazil & 3 countries first
 var dataBrazil = [{
@@ -72,7 +96,7 @@ data = data.map(item => {
         ...item,
         value: parseInt(Math.random() * 20)
     }
-}); */
+});
 
 var exportLayer = new L.exportLayer({
     map: expomap,
