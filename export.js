@@ -39,7 +39,7 @@ function makeLayerControl(map) {
 let expomap = makemap("expomap");
 makeLayerControl(expomap);
 
-// create a red polyline from an array of arrays of LatLng points
+// create polylines from an array of arrays of LatLng points
 // brazil to ...
 var latlngs = [
     [ //usa
@@ -55,6 +55,10 @@ var latlngs = [
         [41.29246, 12.5736108]
     ]
 ];
+
+var marker = L.marker(
+    [-15.749997, -47.9499962], [37.6, -95.665], [51.1642292, 10.4541194], [41.29246, 12.5736108]
+).addTo(expomap);
 
 var polyline = L.polyline(latlngs, {
     color: 'green'
