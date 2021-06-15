@@ -1,7 +1,4 @@
-var selectedMap;
-var selectedMapPop;
-
-// Karte darstellen
+// Funktion Karte darstellen
 function makemap(mapid) {
     let map = L.map(mapid, {
         center: [12, 15],
@@ -14,7 +11,7 @@ function makemap(mapid) {
     return map
 }
 
-// Layer Control mit iconLayer Plugin
+// Fuktion Layer Control mit iconLayer Plugin
 function makeLayerControl(map) {
     new L.Control.IconLayers(
         [{
@@ -62,8 +59,6 @@ var dataBrazil = [{
     "color": "#ffc726"
 }, ];
 
-// 2nd data set
-// var data2=[{"from":[-73.875523,40.781063],"to":[-80.247887,25.792296],"labels":["New York","Maima"],"color":"#05ffd9"},{"from":[-73.875523,40.781063],"to":[-118.2705,33.9984],"labels":[null,"Los Angeles"],"color":"#00ccff"},{"from":[-73.875523,40.781063],"to":[-87.724088,41.917846],"labels":[null,"Chicago"],"color":"#ffc726"},{"from":[-73.875523,40.781063],"to":[-71.058437,42.35902],"labels":[null,"Boston"],"color":"#e9ff20"},{"from":[-73.875523,40.781063],"to":[-75.683057,45.42172],"labels":[null,"Ottawa"],"color":"#99ff1b"}];
 
 data = data.map(item => {
     return {
@@ -92,7 +87,7 @@ var exportLayer = new L.exportLayer({
 exportLayer.addTo(expomap);
 
 // Funktionen
-// weniger???
+// vielleicht nur gebraucht, wenn mehr Länder vergleichen
 /* function setData() {
     exportLayer.setData(data2);
 }
