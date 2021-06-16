@@ -1,6 +1,7 @@
 // Funktion Karte darstellen
 function makemap(mapid) {
     let map = L.map(mapid, {
+        fullscreenControl: true, // plugin for Leaflet that adds fullscreen button to your maps
         center: [12, 15],
         zoom: 2,
         layers: L.tileLayer.provider('CartoDB.Voyager'),
