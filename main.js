@@ -21,13 +21,13 @@ function makeLayerControl (map) {
         {
             title: 'Karte', 
             layer: L.tileLayer.provider('CartoDB.Voyager'),
-            icon: 'srcbasemap/cartodb_positron.png' 
+            icon: 'plugins/cartodb_positron.png' 
         },
         {
             title: 'Satellit',
             layer: L.tileLayer.grayscale('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {attribution: "Tiles © Esri"
         }),
-            icon: 'srcbasemap/here_satelliteday.png'
+            icon: 'plugins/here_satelliteday.png'
         }
     ], {
         position: 'topleft',

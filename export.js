@@ -2,10 +2,10 @@
 function makemap(mapid) {
     let map = L.map(mapid, {
         fullscreenControl: true, // plugin for Leaflet that adds fullscreen button to your maps
-        center: [12, 15],
+        center: [12, 0],
         zoom: 2,
         layers: L.tileLayer.provider('CartoDB.Voyager'),
-        maxZoom: 6,
+        maxZoom: 4,
         minZoom: 2,
         fadeAnimation: false
     });
@@ -18,14 +18,14 @@ function makeLayerControl(map) {
         [{
                 title: 'Karte',
                 layer: L.tileLayer.provider('CartoDB.Voyager'),
-                icon: 'srcbasemap/cartodb_positron.png'
+                icon: 'plugins/cartodb_positron.png'
             },
             {
                 title: 'Satellit',
                 layer: L.tileLayer.grayscale('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
                     attribution: "Tiles © Esri"
                 }),
-                icon: 'srcbasemap/here_satelliteday.png'
+                icon: 'plugins/here_satelliteday.png'
             }
         ], {
             position: 'topleft',
